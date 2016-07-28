@@ -16,13 +16,4 @@ router.get(/^\/\d+?$/, function(req, res) {
   });
 });
 
-router.param('id', function(req, res, next, id) {
-  next();
-});
-router.get('/:id', function(req, res) {
-  UsersDao.findOneByAttr({1:1}, function(result) {
-    res.json(result);
-  });
-});
-
 module.exports = router;
